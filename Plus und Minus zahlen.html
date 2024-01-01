@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        body {
+            background-color: #454545;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center; /* Zentriert die Elemente vertikal */
+            height: 100vh; /* 100% der Bildschirmhöhe */
+            margin: 0; /* Entfernt den Standardseitenrand */
+        }
+
+        #but1 {
+            width: 30%;
+            height: 715px;
+            font-size: xx-large;
+            background-color: red;
+        }
+
+        #but2 {
+            width: 30%;
+            height: 715px;
+            font-size: xx-large;
+            background-color: green;
+        }
+
+        #pazahl {
+            background-color: aliceblue;
+            width: 35%;
+            height: 80px;
+            margin: 0 auto; /* Zentriert das Element horizontal */
+            font-size: xx-large;
+        }
+
+    </style>
+</head>
+<body>
+
+    <button id="but1" onclick="munos()">-</button>
+
+    <textarea id="pazahl" name="meinTextarea" readonly>0</textarea>
+ 
+    <button id="but2" onclick="plus()">+</button>
+
+    <script>
+
+        alert("Sie können die + oder - Taste benutzen");
+
+        function munos() {
+            let zh1 = document.getElementById("pazahl");
+            let currentValue = parseInt(zh1.value); 
+            zh1.value = currentValue - 1; 
+        }
+
+        function plus() {
+            let zh1 = document.getElementById("pazahl");
+            let currentValue = parseInt(zh1.value); 
+            zh1.value = currentValue + 1; 
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === '+') {
+                plus();
+            } else if (event.key === '-') {
+                munos();
+            }
+        });
+
+    </script>
+
+</body>
+</html>
